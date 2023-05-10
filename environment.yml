@@ -1,0 +1,11 @@
+name: hw1_enc
+dependencies: 
+- python=3.8
+- pip
+- pip:
+  - matplotlib==3.7.1
+  - mlxtend==0.22.0
+  - numpy==1.24.3
+  - pandas==2.0.1
+  - scikit_learn==1.2.2
+  - xgboost==1.7.5
