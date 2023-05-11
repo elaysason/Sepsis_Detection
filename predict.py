@@ -42,6 +42,7 @@ def read_data(path, largely_missing=None):
     total_columns = df.shape[1]
     columns = df.columns
     missing = [[] for _ in range(total_columns)]
+    # counting missing values and imputing missing values and reading the files
 
     for file_name in sorted(folder_files):
         df = pd.read_csv(f"{data_path}/{file_name}", sep='|')
@@ -54,6 +55,7 @@ def read_data(path, largely_missing=None):
         df['patient_number'] = int(patient_number)
         patients_dfs.append(df)
         all_df = None
+    # continue imputing  and averging the values per patient
 
     i = 0
     for patient in patients_dfs:
