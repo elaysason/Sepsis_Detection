@@ -74,9 +74,9 @@ def read_data(path, test, largely_missing=None):
         all_df.to_csv('data_train333.csv')
         return largely_missing
 
-
+# creating and preprocessing the data
 largely_missing_train = read_data('./data/train', False)
-
+# Reading the file after preprocessing
 train = pd.read_csv('./data_train333.csv')
 train = train.drop(train.columns[0], axis=1)
 y_train = train['SepsisLabel']
@@ -111,6 +111,7 @@ parameters = {
 # The columns that got chosen by the forward selection model
 chosen_columns = [39, 58, 65]
 
+# Running a grid searchc to find the best parameters for the model    
 grid_search_xgb = GridSearchCV(
     estimator=XGBClassifier,
     param_grid=parameters,
