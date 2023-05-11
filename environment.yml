@@ -1,4 +1,4 @@
-name: hw1_enc
+name: hw1_env
 dependencies: 
 - python=3.8
 - pip
