@@ -103,7 +103,8 @@ model = loading_pickle_file('xgb_model.pkl')
 # The columns index that got choose by the forward feature selection
 chosen_columns = [39, 58, 65]
 predictions = model.predict(df.iloc[:, chosen_columns])
-ids=[f'patient_{index+1}' for index, _ in enumerate(list(df_index))]
+# accidently set the patient number for the index so changed in the latest commit 
+ids=[f'patient_{int(index)}' for index in list(df_index)]
 data_dict = {'id':ids,'prediction':predictions}
 df_preidcted = pd.DataFrame(data=data_dict)
 df_preidcted.to_csv('prediction.csv',index=False)
